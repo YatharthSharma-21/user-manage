@@ -23,7 +23,7 @@
   color: #ff9800 !important;
 }
 
-.welcome-container button {
+.welcome-container button{
   margin: 0 auto;
   display: block;
   position: relative;
@@ -42,6 +42,7 @@
   background-color: #ff9800 !important;
   border: none;
   cursor: pointer;
+  /* width: 8%; */
 }
 
 .welcome-container button:hover {
@@ -54,9 +55,12 @@
     0 1px 5px 0 rgb(0 0 0 / 20%);
   height: 300px;
   flex: 1 0 16%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
 }
 
-.home {
+.infinite-scroll-component {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 20px;

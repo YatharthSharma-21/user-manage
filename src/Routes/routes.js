@@ -26,9 +26,9 @@ const Dashboard = ({ routes }) => {
       <Nav />  
           <Switch>
             {routes.map((route, i) => {
-              if(!route.render){
+              
               return <RouteWithSubRoutes key={i} {...route} />;
-              }
+              
             })}
             
           </Switch>     
@@ -48,15 +48,8 @@ const ROUTES = [
       {
         path: "/",
         exact: true,
-        component: () => <Welcome />,
-        render : welcome,
-      },
-      {
-        path: "/welcome",
-        exact: true,
-        component: () => <Welcome />,
-        render : welcome,
-      },
+        component: () => !welcome ? <Welcome /> : <Home />,        
+      },      
       {
         path: "/home",
         exact: true,
