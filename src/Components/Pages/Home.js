@@ -7,11 +7,14 @@ import { getMovies } from "../../Redux/Actions/moviesAction"
 import { useHistory } from "react-router";
 
 const Home = () => {
-  const { movies } = useSelector((state) => state.movies);
+  const { movies, page } = useSelector((state) => state.movies);
   const [more,setMore] = useState(true);
   const dispatch = useDispatch();
-  const history = useHistory();
-  const { page } = useSelector((state) => state.movies);
+  const history = useHistory();  
+  console.log('length',movies.length)
+  if(movies && movies.length == 0){
+    dispatch(getMovies(page, history));
+  }
   const fetchMoreData = () => {
     dispatch(getMovies(page, history));
     localStorage.setItem('welcome',true);
@@ -22,7 +25,7 @@ const Home = () => {
         dataLength={movies.length}
         next={fetchMoreData}
         hasMore={more}
-        loader={Notiflix.Loading.Standard("Loading...")}
+        // loader={Notiflix.Loading.Standard("Loading...")}
         endMessage={
           <p style={{ textAlign: "center" }}>
             <b>Yay! You have seen it all</b>
@@ -30,7 +33,7 @@ const Home = () => {
         }
       >
         {movies.map((movie, index) => {
-          return <Card data={movie} />;
+          return <Card data={movie} index={index}/>;
         })}
       </InfiniteScroll>
     </div>

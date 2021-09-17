@@ -6,6 +6,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Nav from "../Components/Navbar/Nav";
 import Welcome from '../Components/Pages/Welcome';
 import Home from '../Components/Pages/Home';
+import Details from '../Components/Pages/Details'
 const welcome = localStorage.getItem('welcome');
 
 //Higher Order Components
@@ -56,7 +57,12 @@ const ROUTES = [
         component: () => <Home />,
         icon: "fas fa-home",
         title: "Home",
-      }       
+      },
+      {
+        path: "/details/:id",
+        exact: true,
+        component: () => <Details />,
+      },       
       ]
      
   }
