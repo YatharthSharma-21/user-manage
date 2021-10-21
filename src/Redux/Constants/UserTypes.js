@@ -1,0 +1,7 @@
+const SET_USER = "SET_USER";
+const SET_PAGE = "SET_PAGE";
+const DELETE_USER = "DELETE_USER";
+const ADD_USER = "ADD_USER";
+
+
+export { SET_USER, SET_PAGE, DELETE_USER, ADD_USER };

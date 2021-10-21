@@ -7,6 +7,7 @@ import Nav from "../Components/Navbar/Nav";
 import Welcome from '../Components/Pages/Welcome';
 import Home from '../Components/Pages/Home';
 import Details from '../Components/Pages/Details'
+import AddUSer from "../Components/Forms/AddUSer";
 const welcome = localStorage.getItem('welcome');
 
 //Higher Order Components
@@ -62,7 +63,12 @@ const ROUTES = [
         path: "/details/:id",
         exact: true,
         component: () => <Details />,
-      },       
+      },     
+      {
+        path: "/add/user",
+        exact: true,
+        component: () => <AddUSer />,
+      },   
       ]
      
   }

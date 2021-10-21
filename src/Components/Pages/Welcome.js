@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../../Redux/Actions/moviesAction"
+import { getUsers } from "../../Redux/Actions/userAction"
 import { useHistory } from "react-router";
 
 const Welcome = () => {
@@ -8,7 +8,7 @@ const Welcome = () => {
   const history = useHistory();
   const { page } = useSelector((state) => state.movies);
     const getStarted = () => {
-      dispatch(getMovies(page, history));
+      dispatch(getUsers(page, history));
         localStorage.setItem('welcome',true);
     }
   return (
