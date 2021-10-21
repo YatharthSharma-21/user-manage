@@ -8,7 +8,7 @@ const Card = ({ data, index }) => {
     dispatch(deleteUsers(id));
   };
   return (
-    <div className="card col-sm-3">
+    <div className="card col-sm-3" style={{width:'24%'}}>
       <p>Id : {data.id} </p>
       <p>Name : {data.name} </p>
       <p>Email : {data.email}</p>

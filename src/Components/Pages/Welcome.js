@@ -6,7 +6,7 @@ import { useHistory } from "react-router";
 const Welcome = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { page } = useSelector((state) => state.movies);
+  const { page } = useSelector((state) => state.users);
     const getStarted = () => {
       dispatch(getUsers(page, history));
         localStorage.setItem('welcome',true);
